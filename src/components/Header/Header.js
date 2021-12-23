@@ -7,9 +7,7 @@ const Header = () => {
       <div className="header-container">
         <h1>Trello Clone</h1>
       </div>
-      <div className="add-column">
-        <button>Add a Column</button>
-      </div>
+      <div className="add-column"></div>
     </div>
   );
 };
