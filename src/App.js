@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import TodoList from "./components/TodoItems/TodoList/TodoList";
 
-const newInput = [
+const initialTasks = [
   {
     id: 1,
     text: "this is the input",
@@ -11,7 +11,7 @@ const newInput = [
 ];
 
 function App() {
-  const [addTask, setAddTask] = useState(newInput);
+  const [tasks, setTasks] = useState(initialTasks);
 
   const handleAddInput = () => {
     const newTask = {
@@ -19,13 +19,13 @@ function App() {
       text: "Test Text",
     };
 
-    setAddTask([...addTask, newTask]);
+    setTasks([...tasks, newTask]);
   };
 
   return (
     <div>
       <Header />
-      <TodoList addTask={addTask} handleAddInput={handleAddInput} />
+      <TodoList addTask={tasks} handleAddInput={handleAddInput} />
     </div>
   );
 }
