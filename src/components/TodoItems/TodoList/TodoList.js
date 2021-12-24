@@ -1,13 +1,26 @@
 import React from "react";
 import Task from "../Task/Task";
 
-const TodoList = ({ addTask, handleAddInput }) => {
+const TodoList = ({
+  addTask,
+  handleAddNewColumn,
+  handleAddTask,
+  handleDeleteTask,
+}) => {
   return (
     <>
-      <button onClick={handleAddInput}>Add new Task</button>
+      <button onClick={handleAddNewColumn}>Add new Column</button>
       <div>
         {addTask.map((task) => {
-          return <Task key={task.id} />;
+          return (
+            <Task
+              key={task.id}
+              text={task.text}
+              id={task.id}
+              handleAddTask={handleAddTask}
+              handleDeleteTask={handleDeleteTask}
+            />
+          );
         })}
       </div>
     </>
